@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://7sged7un444m"]
+
+[ext_resource type="PackedScene" uid="uid://benckct0gjdn6" path="res://scenes/tables/table.tscn" id="1_dfxlm"]
+[ext_resource type="Texture2D" uid="uid://bytq81splbe0m" path="res://icon.svg" id="1_gvxby"]
+
+[node name="main" type="Node2D"]
+
+[node name="Table" parent="." instance=ExtResource("1_dfxlm")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -260.0
+offset_right = 129.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0.117647, 0.0705882, 1)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(64, 64)
+rotation = 0.502655
+texture = ExtResource("1_gvxby")
+offset = Vector2(100, 0)
