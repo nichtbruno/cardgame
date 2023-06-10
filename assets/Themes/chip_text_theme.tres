@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bhg5seuuqbadx"]
+
+[ext_resource type="FontFile" uid="uid://cdenilubp2ibj" path="res://assets/font/Silkscreen/Silkscreen-Bold.ttf" id="1_40cxv"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_40cxv")

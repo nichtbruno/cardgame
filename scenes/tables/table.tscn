@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://benckct0gjdn6"]
 
-[ext_resource type="Texture2D" uid="uid://drl04m8yli72m" path="res://assets/tables/normal_table.png" id="1_a0w5b"]
+[ext_resource type="Texture2D" uid="uid://bf5bx1n5mu15b" path="res://assets/tables/black_table.png" id="1_ls8gj"]
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -23,5 +23,5 @@ offset_right = 22145.0
 offset_bottom = 11657.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_a0w5b")
+texture = ExtResource("1_ls8gj")
 stretch_mode = 1

@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="WOT"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
+
+[autoload]
+
+IndexMap="*res://scripts/globals/index_map.gd"
 
 [display]
 
@@ -25,3 +30,4 @@ window/handheld/orientation=1
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

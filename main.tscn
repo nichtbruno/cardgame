@@ -1,44 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://7sged7un444m"]
+[gd_scene load_steps=5 format=3 uid="uid://7sged7un444m"]
 
 [ext_resource type="PackedScene" uid="uid://benckct0gjdn6" path="res://scenes/tables/table.tscn" id="1_dfxlm"]
-[ext_resource type="Texture2D" uid="uid://bytq81splbe0m" path="res://icon.svg" id="1_gvxby"]
+[ext_resource type="PackedScene" uid="uid://cylmdv882ikb2" path="res://presets/wallet_preset.tscn" id="3_o1yre"]
+[ext_resource type="PackedScene" uid="uid://bl1raqlh0sbd3" path="res://presets/hand_preset.tscn" id="5_jvbe7"]
+[ext_resource type="PackedScene" uid="uid://b0bmud0d0vbp0" path="res://scenes/chips/chip_board.tscn" id="9_dlr1q"]
 
 [node name="main" type="Node2D"]
 
 [node name="Table" parent="." instance=ExtResource("1_dfxlm")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -1.0
+offset_top = -3.0
+offset_right = -1.0
+offset_bottom = -3.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+[node name="chip_board" parent="CanvasLayer" instance=ExtResource("9_dlr1q")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 30.0
+offset_top = -462.0
+offset_right = 30.0
+offset_bottom = -30.0
+grow_horizontal = 1
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Wallet" parent="CanvasLayer" instance=ExtResource("3_o1yre")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Hand" parent="CanvasLayer" instance=ExtResource("5_jvbe7")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -129.0
-offset_top = -260.0
-offset_right = 129.0
-grow_horizontal = 2
 grow_vertical = 0
-color = Color(1, 0.117647, 0.0705882, 1)
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 8
+[node name="DealerHand" parent="CanvasLayer" instance=ExtResource("5_jvbe7")]
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect3" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(64, 64)
-rotation = 0.502655
-texture = ExtResource("1_gvxby")
-offset = Vector2(100, 0)
+anchor_bottom = 0.0
+grow_vertical = 1
+is_dealer = true

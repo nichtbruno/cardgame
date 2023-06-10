@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cylmdv882ikb2"]
+
+[ext_resource type="Script" path="res://scripts/wallets/wallet_preset_script.gd" id="1_fsct5"]
+[ext_resource type="Theme" uid="uid://c12q624cncrhr" path="res://assets/Themes/normal_text_theme.tres" id="3_u8sdc"]
+
+[node name="Wallet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsct5")
+
+[node name="walletSprite" type="Sprite2D" parent="."]
+position = Vector2(-15, -146)
+rotation = 0.10821
+scale = Vector2(6, 6)
+metadata/_edit_group_ = true
+
+[node name="cardSprite" type="Sprite2D" parent="walletSprite"]
+z_index = -1
+position = Vector2(-4.76837e-07, -16)
+
+[node name="money" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -233.0
+offset_top = -380.0
+offset_bottom = -344.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 0.14902)
+
+[node name="Label" type="Label" parent="money"]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 36.0
+theme = ExtResource("3_u8sdc")
+text = "1.000.000.000€"
+horizontal_alignment = 1
+vertical_alignment = 1

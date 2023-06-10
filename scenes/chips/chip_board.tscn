@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0bmud0d0vbp0"]
+
+[ext_resource type="Texture2D" uid="uid://duxa4eb6wyrfc" path="res://assets/chips/chip_use_border.png" id="1_twlms"]
+[ext_resource type="PackedScene" uid="uid://bc717ucb8ofu4" path="res://presets/chip_preset.tscn" id="2_0uob2"]
+
+[node name="chip_board" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_twlms")
+centered = false
+
+[node name="Chip" parent="." instance=ExtResource("2_0uob2")]
+offset_left = 7.0
+offset_top = 328.0
+offset_right = 7.0
+offset_bottom = 328.0
+is_all_in = true
+is_empty = true
+
+[node name="Chip2" parent="." instance=ExtResource("2_0uob2")]
+offset_left = 7.0
+offset_top = 215.0
+offset_right = 7.0
+offset_bottom = 215.0
+label = "100k"
+
+[node name="Chip3" parent="." instance=ExtResource("2_0uob2")]
+offset_left = 7.0
+offset_top = 111.0
+offset_right = 7.0
+offset_bottom = 111.0
+is_empty = true
+
+[node name="Chip4" parent="." instance=ExtResource("2_0uob2")]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 7.0
+offset_bottom = 7.0
+is_empty = true

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc717ucb8ofu4"]
+
+[ext_resource type="Texture2D" uid="uid://dusmwn45cykee" path="res://assets/chips/default_chip.png" id="1_bfgxx"]
+[ext_resource type="Script" path="res://scripts/chips/chip_preset_script.gd" id="1_rl8er"]
+[ext_resource type="Theme" uid="uid://bhg5seuuqbadx" path="res://assets/Themes/chip_text_theme.tres" id="2_stqle"]
+
+[node name="Chip" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rl8er")
+empty_label_color = Color(0, 0, 0, 0.431373)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_bfgxx")
+centered = false
+hframes = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = ExtResource("2_stqle")
+horizontal_alignment = 1
+vertical_alignment = 1
