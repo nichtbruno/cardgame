@@ -10,11 +10,19 @@ anchors_preset = 0
 script = ExtResource("1_rl8er")
 empty_label_color = Color(0, 0, 0, 0.431373)
 
+[node name="shadow" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_bfgxx")
+centered = false
+offset = Vector2(1, 1)
+hframes = 19
+frame = 18
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("1_bfgxx")
 centered = false
-hframes = 2
+hframes = 19
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

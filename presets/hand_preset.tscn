@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl1raqlh0sbd3"]
+[gd_scene load_steps=6 format=3 uid="uid://bl1raqlh0sbd3"]
 
 [ext_resource type="Script" path="res://scripts/hands/hand_preset_script.gd" id="1_3h1re"]
-[ext_resource type="Texture2D" uid="uid://b8nl11sw77t0n" path="res://assets/cards/default_card.png" id="2_cxdvw"]
+[ext_resource type="Texture2D" uid="uid://cxmfgkqw551r8" path="res://assets/hands/hand.png" id="2_05j4f"]
+[ext_resource type="Texture2D" uid="uid://hu1q8ev1grry" path="res://assets/hands/thumb.png" id="4_cpgni"]
 [ext_resource type="Theme" uid="uid://c12q624cncrhr" path="res://assets/Themes/normal_text_theme.tres" id="4_dogbf"]
+[ext_resource type="Script" path="res://scripts/cards/card_manager_script.gd" id="4_e6muc"]
 
 [node name="Hand" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3h1re")
@@ -16,28 +20,17 @@ script = ExtResource("1_3h1re")
 [node name="handSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -192)
 scale = Vector2(6, 6)
+texture = ExtResource("2_05j4f")
 
-[node name="card" type="Sprite2D" parent="handSprite"]
-position = Vector2(2.10888, -3.38758)
-rotation = -0.045124
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_cxdvw")
-offset = Vector2(0, -16)
-hframes = 3
-
-[node name="card2" type="Sprite2D" parent="handSprite"]
-position = Vector2(-6.5578, -2.22092)
-rotation = -0.36801
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_cxdvw")
-offset = Vector2(0, -16)
-hframes = 3
-frame = 1
+[node name="card_manager" type="Marker2D" parent="handSprite"]
+position = Vector2(-2, 1)
+rotation = -0.0872665
+script = ExtResource("4_e6muc")
+parableSize = 5.0
+rotation_multiplier = 0.2
 
 [node name="thumbSprite" type="Sprite2D" parent="handSprite"]
-
-[node name="card_pos" type="Marker2D" parent="handSprite"]
-position = Vector2(-3, -1)
+texture = ExtResource("4_cpgni")
 
 [node name="number" type="ColorRect" parent="."]
 layout_mode = 1

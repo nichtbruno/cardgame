@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8nl11sw77t0n"
-path="res://.godot/imported/default_card.png-bf6abbe3b8477e53bfe7bf125a350ac8.ctex"
+uid="uid://dqmvtnsvjx82a"
+path="res://.godot/imported/dark_gold_card.png-1d9789cd40e42833c8fba13afa6e3a4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/default_card.png"
-dest_files=["res://.godot/imported/default_card.png-bf6abbe3b8477e53bfe7bf125a350ac8.ctex"]
+source_file="res://assets/cards/dark_gold_card.png"
+dest_files=["res://.godot/imported/dark_gold_card.png-1d9789cd40e42833c8fba13afa6e3a4b.ctex"]
 
 [params]
 
