@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://7sged7un444m"]
+[gd_scene load_steps=7 format=3 uid="uid://7sged7un444m"]
 
 [ext_resource type="PackedScene" uid="uid://benckct0gjdn6" path="res://scenes/tables/table.tscn" id="1_dfxlm"]
+[ext_resource type="PackedScene" uid="uid://bv7kmbsil7vl6" path="res://scenes/AnimationControllerPreset.tscn" id="2_nan2k"]
 [ext_resource type="PackedScene" uid="uid://cylmdv882ikb2" path="res://presets/wallet_preset.tscn" id="3_o1yre"]
 [ext_resource type="PackedScene" uid="uid://bl1raqlh0sbd3" path="res://presets/hand_preset.tscn" id="5_jvbe7"]
+[ext_resource type="PackedScene" uid="uid://c1k177o55jxww" path="res://presets/dealer_hand_preset.tscn" id="6_u8end"]
 [ext_resource type="PackedScene" uid="uid://b0bmud0d0vbp0" path="res://scenes/chips/chip_board.tscn" id="9_dlr1q"]
 
 [node name="main" type="Node2D"]
@@ -20,6 +22,12 @@ grow_vertical = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="AnimationController" parent="CanvasLayer" node_paths=PackedStringArray("hand", "dealer_hand", "wallet", "chip_storage") instance=ExtResource("2_nan2k")]
+hand = NodePath("../Hand")
+dealer_hand = NodePath("../DealerHand")
+wallet = NodePath("../Wallet")
+chip_storage = NodePath("")
 
 [node name="chip_board" parent="CanvasLayer" instance=ExtResource("9_dlr1q")]
 anchors_preset = 2
@@ -50,7 +58,7 @@ offset_left = 0.0
 offset_right = 0.0
 grow_vertical = 0
 
-[node name="DealerHand" parent="CanvasLayer" instance=ExtResource("5_jvbe7")]
+[node name="DealerHand" parent="CanvasLayer" instance=ExtResource("6_u8end")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -58,4 +66,3 @@ anchor_bottom = 0.0
 offset_left = 0.0
 offset_right = 0.0
 grow_vertical = 1
-is_dealer = true

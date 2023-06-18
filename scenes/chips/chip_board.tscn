@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0bmud0d0vbp0"]
+[gd_scene load_steps=7 format=3 uid="uid://b0bmud0d0vbp0"]
 
+[ext_resource type="Script" path="res://scripts/chips/chip_board_script.gd" id="1_82br4"]
 [ext_resource type="Texture2D" uid="uid://duxa4eb6wyrfc" path="res://assets/chips/chip_use_border.png" id="1_twlms"]
 [ext_resource type="PackedScene" uid="uid://bc717ucb8ofu4" path="res://presets/chip_preset.tscn" id="2_0uob2"]
+[ext_resource type="Texture2D" uid="uid://c5bq5b5ke2nru" path="res://assets/chips/edit_pencil.png" id="4_a2jev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_extmi"]
+
+[sub_resource type="Theme" id="Theme_uv8ir"]
+Button/styles/focus = SubResource("StyleBoxEmpty_extmi")
 
 [node name="chip_board" type="Control"]
 layout_mode = 3
@@ -10,33 +17,87 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_82br4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="board_sprite" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("1_twlms")
 centered = false
 
-[node name="Chip" parent="." instance=ExtResource("2_0uob2")]
+[node name="used_chips" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AllInChip" parent="used_chips" instance=ExtResource("2_0uob2")]
 offset_left = 7.0
 offset_top = 328.0
 offset_right = 7.0
 offset_bottom = 328.0
 is_all_in = true
 
-[node name="Chip2" parent="." instance=ExtResource("2_0uob2")]
+[node name="ButtonAllIn" type="Button" parent="used_chips/AllInChip"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = SubResource("Theme_uv8ir")
+flat = true
+
+[node name="Chip0" parent="used_chips" instance=ExtResource("2_0uob2")]
 offset_left = 7.0
 offset_top = 215.0
 offset_right = 7.0
 offset_bottom = 215.0
 
-[node name="Chip3" parent="." instance=ExtResource("2_0uob2")]
+[node name="Button0" type="Button" parent="used_chips/Chip0"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = SubResource("Theme_uv8ir")
+flat = true
+
+[node name="Chip1" parent="used_chips" instance=ExtResource("2_0uob2")]
 offset_left = 7.0
 offset_top = 111.0
 offset_right = 7.0
 offset_bottom = 111.0
 
-[node name="Chip4" parent="." instance=ExtResource("2_0uob2")]
+[node name="Button1" type="Button" parent="used_chips/Chip1"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = SubResource("Theme_uv8ir")
+flat = true
+
+[node name="Chip2" parent="used_chips" instance=ExtResource("2_0uob2")]
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 7.0
 offset_bottom = 7.0
+
+[node name="Button2" type="Button" parent="used_chips/Chip2"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = SubResource("Theme_uv8ir")
+flat = true
+
+[node name="EditButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = -82.0
+offset_right = 96.0
+offset_bottom = -6.0
+theme = SubResource("Theme_uv8ir")
+flat = true
+
+[node name="pencil" type="Sprite2D" parent="."]
+position = Vector2(37, -43)
+scale = Vector2(2, 2)
+texture = ExtResource("4_a2jev")
+vframes = 2
+
+[connection signal="button_up" from="used_chips/AllInChip/ButtonAllIn" to="." method="_on_button_all_in_button_up"]
+[connection signal="button_up" from="used_chips/Chip0/Button0" to="." method="_on_button_0_button_up"]
+[connection signal="button_up" from="used_chips/Chip1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="button_up" from="used_chips/Chip2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="EditButton" to="." method="_on_edit_button_button_up"]

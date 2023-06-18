@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl1raqlh0sbd3"]
+[gd_scene load_steps=9 format=3 uid="uid://c1k177o55jxww"]
 
-[ext_resource type="Script" path="res://scripts/hands/hand_preset_script.gd" id="1_3h1re"]
-[ext_resource type="Texture2D" uid="uid://cxmfgkqw551r8" path="res://assets/hands/hand.png" id="2_05j4f"]
-[ext_resource type="Texture2D" uid="uid://p0q3yjsc1kem" path="res://assets/hands/shadow_thumb.png" id="4_c26es"]
-[ext_resource type="Texture2D" uid="uid://hu1q8ev1grry" path="res://assets/hands/thumb.png" id="4_cpgni"]
-[ext_resource type="Theme" uid="uid://c12q624cncrhr" path="res://assets/Themes/normal_text_theme.tres" id="4_dogbf"]
-[ext_resource type="Script" path="res://scripts/cards/card_manager_script.gd" id="4_e6muc"]
+[ext_resource type="Script" path="res://scripts/hands/dealer_hand_preset_script.gd" id="1_g6plf"]
+[ext_resource type="Texture2D" uid="uid://b34wjkvohy85y" path="res://assets/hands/dealer_hand.png" id="2_rv1kg"]
+[ext_resource type="Script" path="res://scripts/cards/card_manager_script.gd" id="3_1gfc7"]
+[ext_resource type="Texture2D" uid="uid://blictlljkshuu" path="res://assets/hands/dealer_thumb.png" id="4_1qdtj"]
+[ext_resource type="Theme" uid="uid://c12q624cncrhr" path="res://assets/Themes/normal_text_theme.tres" id="5_xmwi0"]
 
 [sub_resource type="Curve" id="Curve_fbl65"]
 min_value = -1.0
@@ -23,11 +22,6 @@ min_value = -1.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_extmi"]
-
-[sub_resource type="Theme" id="Theme_a2g4w"]
-Button/styles/focus = SubResource("StyleBoxEmpty_extmi")
-
 [node name="Hand" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,17 +31,17 @@ offset_left = 20.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3h1re")
+script = ExtResource("1_g6plf")
 
 [node name="handSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -192)
 scale = Vector2(6, 6)
-texture = ExtResource("2_05j4f")
+texture = ExtResource("2_rv1kg")
 
 [node name="card_manager" type="Marker2D" parent="handSprite"]
 position = Vector2(-4, 3)
 rotation = -0.10472
-script = ExtResource("4_e6muc")
+script = ExtResource("3_1gfc7")
 hand_curve = SubResource("Curve_fbl65")
 hand_height_curve = SubResource("Curve_bgd8p")
 hand_rotation_curve = SubResource("Curve_8psea")
@@ -55,20 +49,8 @@ handHeight = 1.0
 handSize = 6.0
 rotation_multiplier = 0.1
 
-[node name="thumbShadow" type="Sprite2D" parent="handSprite"]
-texture = ExtResource("4_c26es")
-offset = Vector2(1, 0)
-
 [node name="thumbSprite" type="Sprite2D" parent="handSprite"]
-texture = ExtResource("4_cpgni")
-
-[node name="HandButton" type="Button" parent="handSprite"]
-offset_left = -13.0
-offset_top = -6.0
-offset_right = 14.0
-offset_bottom = 32.0
-theme = SubResource("Theme_a2g4w")
-flat = true
+texture = ExtResource("4_1qdtj")
 
 [node name="number" type="ColorRect" parent="."]
 layout_mode = 1
@@ -87,9 +69,7 @@ color = Color(0, 0, 0, 0.14902)
 layout_mode = 0
 offset_right = 98.0
 offset_bottom = 36.0
-theme = ExtResource("4_dogbf")
+theme = ExtResource("5_xmwi0")
 text = "--"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="button_up" from="handSprite/HandButton" to="." method="_on_hand_button_button_up"]

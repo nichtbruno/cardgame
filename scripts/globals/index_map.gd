@@ -1,12 +1,12 @@
 extends Node
 # maybe preformance issues, could recommend using preload
-var hand_index_map = ["res://assets/hands/hand.png", "res://assets/hands/dealer_hand.png"];
-var thumb_index_map = ["res://assets/hands/thumb.png", "res://assets/hands/dealer_thumb.png"];
+var hand_index_map = ["res://assets/hands/hand.png", "res://assets/hands/dealer_hand.png"]
+var thumb_index_map = ["res://assets/hands/thumb.png", "res://assets/hands/dealer_thumb.png"]
 
-var wallet_index_map = ["res://assets/wallets/default_wallet.png", "res://assets/wallets/brown_wallet.png"];
-var credit_card_index_map = ["res://assets/credit_cards/default_credit_card.png", "res://assets/credit_cards/sparkasse_credit_card.png"];
+var wallet_index_map = ["res://assets/wallets/default_wallet.png", "res://assets/wallets/brown_wallet.png"]
+var credit_card_index_map = ["res://assets/credit_cards/default_credit_card.png", "res://assets/credit_cards/sparkasse_credit_card.png"]
 
-var table_index_map = ["res://assets/tables/normal_table.png", "res://assets/tables/black_table.png"];
+var table_index_map = ["res://assets/tables/normal_table.png", "res://assets/tables/black_table.png"]
 
 var card_deck_index_map = [
 	"res://assets/cards/default_red_card.png",
@@ -23,6 +23,11 @@ var card_numeration_map = [
 	["back"]
 ]
 
+var chip_index_map = ["res://assets/chips/default_chip.png"]
 var chip_val = [
-	"1€", "5€", "10€", "50€", "100€", "500€", "1k", "5k", "10k", "50k", "100k", "500k", "1m", "10m", "100m", "1B", "10B"
+	"1", "5", "10", "50", "100", "500", "1k", "5k", "10k", "50k", "100k", "500k", "1m", "10m", "100m", "1B", "10B"
 ]
+
+# var chip_val = [
+# 	"1", "10", "100", "1k", "10k", "100k", "1m", "10m", "100m", "1B", "10B"
+# ]
